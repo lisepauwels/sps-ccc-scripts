@@ -37,6 +37,7 @@ _RESULTS_DIR = Path("results/loss_maps")
 # Time window inside the cycle used for saving/plotting the sweep.
 _WINDOW_START_MS = 300
 _WINDOW_STOP_MS = 3000
+_PLOT_FLOOR = 1.0e-6
 
 
 # ============================
@@ -131,11 +132,13 @@ def max_loss_snapshot(channel_names, times_ms, waveforms):
     for channel_name, loss_value in zip(channel_names, snapshot):
         if channel_name not in positions:
             continue
+        has_signal = np.isfinite(loss_value) and float(loss_value) > 0.0
         points.append(
             {
                 "channel": channel_name,
                 "s": float(positions[channel_name]),
-                "loss": float(loss_value),
+                "loss": float(loss_value) if np.isfinite(loss_value) else 0.0,
+                "has_signal": bool(has_signal),
             }
         )
 
@@ -171,9 +174,21 @@ def save_snapshot(cycle_stamp, channel_names, times_ms, waveforms, snapshot_time
 def plot_snapshot(snapshot_time_ms, points):
     axis.cla()
     if points:
-        s = [point["s"] for point in points]
-        losses = [point["loss"] for point in points]
-        axis.scatter(s, losses, s=14)
+        active_points = [point for point in points if point["has_signal"]]
+        inactive_points = [point for point in points if not point["has_signal"]]
+
+        if active_points:
+            s_active = [point["s"] for point in active_points]
+            losses_active = [max(point["loss"], _PLOT_FLOOR) for point in active_points]
+            axis.scatter(s_active, losses_active, s=14, color="black")
+
+        if inactive_points:
+            s_inactive = [point["s"] for point in inactive_points]
+            losses_inactive = [_PLOT_FLOOR for _ in inactive_points]
+            axis.scatter(s_inactive, losses_inactive, s=18, color="blue")
+
+    axis.set_yscale("log")
+    axis.set_ylim(bottom=_PLOT_FLOOR)
     axis.set_xlabel("S position [m]")
     axis.set_ylabel("BLM loss [gray]")
     axis.set_title(f"Loss map at {snapshot_time_ms:.1f} ms")

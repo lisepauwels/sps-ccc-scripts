@@ -27,6 +27,7 @@ Build a CCC workflow to:
 - `loss_map_monitor.py`
   BLM scaffold for live loss-map plotting and raw waveform saving.
   Uses the BLM waveform arrays from ExpertAcquisition and selects the plotting time from the maximum total loss inside a configurable cycle-time window.
+  Plotting is logarithmic, and monitors with no usable signal are shown as blue points at the plot floor so they remain visible on the map.
 
 ## Save logic
 

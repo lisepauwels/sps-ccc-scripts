@@ -150,6 +150,8 @@ The intended workflow is:
 - save all samples in that window
 - choose the plotting time from the maximum total loss over all channels
 - build the live loss map from `blm_positions.json`
+- plot the loss map on a logarithmic scale
+- show monitors with no usable signal as blue points at the plot floor
 
 This means:
 
