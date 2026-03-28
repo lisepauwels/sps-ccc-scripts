@@ -1,0 +1,5 @@
+__pycache__/
+inspection/
+results/
+*.pyc
+.DS_Store
