@@ -1,8 +1,34 @@
 from __future__ import annotations
 
 import math
-
 import numpy as np
+
+
+from general import store_data
+
+_BBQ = "SPS.BQ.KICKED/Acquisition"
+_BBQ_FULL = "SPS.BQ.KICKED/ContinuousAcquisition"
+
+
+def log_bbq(name, data, header):
+   cycle_time = header['cycleStamp']
+   store_data(f"rawdata/BBQ_data_{cycle_time}", data, header=header)
+
+def log_bbq_full(name, data, header):
+   cycle_time = header['cycleStamp']
+   store_data(f"rawdata/BBQ_full_data_{cycle_time}", data, header=header)
+
+def subscribe_bbq_kicked(japc):
+    japc.subscribeParam(_BBQ, log_bbq, getHeader=True)
+
+def subscribe_bbq_kicked_full(japc):
+    japc.subscribeParam(_BBQ_FULL, log_bbq_full, getHeader=True)
+
+
+
+
+
+
 
 
 def _value_dict(raw):
