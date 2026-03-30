@@ -54,7 +54,7 @@ def current_repetition():
     return variables["repetition"]
 
 def name():
-    return f"{shortname}/{int(current_offset()*1e6)}E-6/id{current_repetition()}"
+    return f"{shortname}/DP{int(current_offset()*1e6)}E-6/id{current_repetition()}"
 
 def advance_scan():
     if variables["repetition"] < repetitions:
