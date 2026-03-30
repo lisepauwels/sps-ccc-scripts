@@ -11,14 +11,14 @@ def store_data(name, data, meta={}, header=None):
         res.pop('header', None)
     else:
         res['header'] = header
-    Path(f'results/{name}.json').parent.mkdir(parents=True, exist_ok=True)
-    with Path(f'results/{name}.json').open("w") as fp:
+    Path(f'../sps-measurements/{name}.json').parent.mkdir(parents=True, exist_ok=True)
+    with Path(f'../sps-measurements/{name}.json').open("w") as fp:
         json.dump(res, fp, indent=4, cls=NumpyFriendlyEncoder)
 
 def result_exists(name=None):
     if name is None:
         raise ValueError("Name must be provided to check for result existence.")
-    return Path(f'results/{name}.json').exists()
+    return Path(f'../sps-measurements/{name}.json').exists()
 
 def clean_bbq_data(result):
     result.pop('rawDataQ', None)
