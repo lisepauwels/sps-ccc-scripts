@@ -145,6 +145,23 @@ def estimate_tune_fft(
     }
 
 
+def tune_spectrum(
+    signal,
+    tune_min=0.05,
+    tune_max=0.5,
+):
+    samples = np.asarray(signal, dtype=float)
+    samples = samples - np.mean(samples)
+    if samples.size < 32:
+        return np.array([]), np.array([])
+
+    window = np.hanning(samples.size)
+    spectrum = np.abs(np.fft.rfft(samples * window))
+    freq = np.fft.rfftfreq(samples.size, d=1.0)
+    band = (freq >= tune_min) & (freq <= tune_max)
+    return freq[band], spectrum[band]
+
+
 def estimate_tune_from_bbq(
     bbq_raw,
     plane,
