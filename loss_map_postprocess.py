@@ -6,7 +6,7 @@ from loss_map_common import STORAGE_ROOT
 from loss_map_common import save_loss_map_pdf
 
 
-_LOSS_MAP_WINDOW_MS = (2200.0, 3200.0)
+_LOSS_MAP_WINDOW_MS = None
 _SHOW_BLM_LABELS = True  # Set to False if you want to suppress BLM names.
 
 

@@ -144,11 +144,32 @@ The loss-map workflow is now split into three scripts:
 - [loss_map_save.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_save.py)
   subscribes once per cycle, checks that beam is present, and saves one parquet file per successful repetition.
 - [loss_map_live_plot.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_live_plot.py)
-  plots the last three loss maps live.
+  shows four live windows: the latest total-loss trace plus the last three loss maps.
 - [loss_map_postprocess.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_postprocess.py)
   reads the saved parquet files and writes 300 dpi PDF figures.
 
-It uses the BLM keys in [blm_positions.json](/Users/lisepauwels/phd/code/sps-ccc-scripts/blm_positions.json) as the authoritative monitor list for acquisition, filtering, and plotting.
+It uses fixed SPS acquisition sources:
+
+- `BLRSPS_BA1/ExpertAcquisition` through `BLRSPS_BA6/ExpertAcquisition`
+- `BLRSPS_LSS1/ExpertAcquisition`
+- `BLRSPS_LSS2/ExpertAcquisition`
+- `BLRSPS_LSS4/ExpertAcquisition`
+- `BLRSPS_LSS5/ExpertAcquisition`
+- `BLRSPS_LSS6/ExpertAcquisition`
+
+with JAPC field access through:
+
+- `...#channelNames`
+- `...#beamLossMeasurementTimes_ms`
+- `...#beamLossMeasurements_gray`
+
+The BLM keys in [blm_positions.json](/Users/lisepauwels/phd/code/sps-ccc-scripts/blm_positions.json) are used as the whitelist of channels to keep, save, and plot. Transfer-line channels that are not in that file are ignored.
+
+The saver and live plotter also gate on the subscribed BCT callback itself:
+
+- use the callback `anchor_value` as the BCT payload for that exact cycle
+- accept only callbacks from the selected MD user / selector
+- skip duplicate accepted `cycleStamp` values
 
 The save format is:
 
@@ -188,11 +209,25 @@ The post-processing output is written next to each parquet file:
 
 Each PDF contains:
 
-- one loss map from the configured cycle window
+- one integrated loss map built by summing losses over the selected cycle window
 - logarithmic y-scale
 - y = loss in that BLM divided by total loss
 - x = position along the ring
 - `TCSM` and `TIDP` monitors in black
 - all other monitors in red
 
-For both live plotting and post-processing there is a `_SHOW_BLM_LABELS` switch in the script, so the BLM names can be disabled by simply changing that variable.
+The live plotting script now shows four separate figures:
+
+- the latest total-loss trace in the selected cycle window
+- the most recent integrated loss map
+- the second most recent integrated loss map
+- the third most recent integrated loss map
+
+By default the live loss maps do not draw BLM names directly on the figure. The `_SHOW_BLM_LABELS` switch in the plotting scripts can re-enable them if needed.
+
+For quick checks from IPython or the CCC, use:
+
+```bash
+python3 inspect_lossmap_file.py ../sps-measurements/lossmaps/<study_name>/id1.parquet
+python3 inspect_lossmap_file.py ../sps-measurements/lossmaps/<study_name>/id1.json --plot --window 1015 3200
+```

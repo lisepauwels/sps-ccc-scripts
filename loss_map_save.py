@@ -9,20 +9,20 @@ import pyjapc
 from bct import beam_injected
 from loss_map_common import STORAGE_ROOT
 from loss_map_common import acquisition_params
+from loss_map_common import build_blm_frame
+from loss_map_common import load_blm_sources
 from loss_map_common import build_repetition_payload
 from loss_map_common import build_repetition_dataframe
 from loss_map_common import cycle_timestamp_utc
-from loss_map_common import filter_waveforms_for_known_channels
-from loss_map_common import load_blm_keys
+from loss_map_common import header_cycle_name
+from loss_map_common import header_selector
 from loss_map_common import load_positions
-from loss_map_common import merge_acquisitions
 from loss_map_common import save_payload_json
 
 
 THIS_TIME = f"{pd.Timestamp.now(tz='UTC')}".split(".")[0]
 
 _SPS_USER = "SPS.USER.MD2"
-_CYCLE_NAME = ""
 _ANCHOR = "SPS.BCTDC24.51454/Acquisition"
 _BCT = "SPS.BCTDC24.51454/Acquisition"
 
@@ -70,12 +70,14 @@ def load_acquisition(japc, prefix: str):
 def main():
     args = parse_args()
     positions = load_positions()
-    blm_keys = load_blm_keys()
+    blm_keys = set(positions)
+    blm_sources = load_blm_sources()
     japc = pyjapc.PyJapc(_SPS_USER, incaAcceleratorName=None)
 
     state = {
         "repetition": 1,
         "finished": False,
+        "last_accepted_cycle_stamp": None,
     }
 
     def skip_existing_results():
@@ -84,7 +86,7 @@ def main():
         if state["repetition"] > args.repetitions:
             state["finished"] = True
 
-    def on_cycle(_param, _anchor_value, anchor_header):
+    def on_cycle(_param, anchor_value, anchor_header):
         if state["finished"]:
             return
 
@@ -93,24 +95,34 @@ def main():
             japc.stopSubscriptions()
             return
 
-        bct_data = japc.getParam(_BCT)
+        bct_data = anchor_value
         cycle_stamp = anchor_header["cycleStamp"]
         rep = state["repetition"]
+        incoming_selector = header_selector(anchor_header)
 
         print_log(f"Cycle {cycle_stamp}: repetition {rep}", end="")
+
+        if incoming_selector and incoming_selector != _SPS_USER:
+            print_log(f" -> SKIP. Selector {incoming_selector} does not match {_SPS_USER}.")
+            return
+
+        if state["last_accepted_cycle_stamp"] == cycle_stamp:
+            print_log(" -> SKIP. Same cycleStamp as previous accepted cycle.")
+            return
 
         if not beam_injected(bct_data, t_before_ms=_BEAM_CHECK_BEFORE_MS):
             print_log(" -> ERROR. No beam before loss-map window. Hanging on same repetition.")
             return
 
-        acquisitions = [load_acquisition(japc, prefix) for prefix in blm_keys]
-        channel_df, times_ms, waveforms = merge_acquisitions(acquisitions)
-        channel_df, waveforms = filter_waveforms_for_known_channels(channel_df, waveforms, positions)
+        acquisitions = [load_acquisition(japc, prefix) for prefix in blm_sources]
+        blm_frame = build_blm_frame(acquisitions, positions)
+        if blm_frame.empty:
+            print_log(" -> ERROR. No SPS BLMs from blm_positions.json were found in the BA/LSS acquisitions.")
+            return
 
         cycle_name = (
-            _CYCLE_NAME
-            or anchor_header.get("cycleName")
-            or anchor_header.get("selector")
+            header_cycle_name(anchor_header)
+            or incoming_selector
             or ""
         )
 
@@ -133,14 +145,15 @@ def main():
         json_path = repetition_json_path(args.study_name, rep)
 
         if _SAVE_PARQUET:
-            frame = build_repetition_dataframe(channel_df, times_ms, waveforms, bct_data, metadata, anchor_header)
+            frame = build_repetition_dataframe(blm_frame, bct_data, metadata, anchor_header)
             parquet_path.parent.mkdir(parents=True, exist_ok=True)
             frame.to_parquet(parquet_path, index=False)
 
         if _SAVE_JSON:
-            payload = build_repetition_payload(channel_df, times_ms, waveforms, bct_data, metadata, anchor_header)
+            payload = build_repetition_payload(blm_frame, bct_data, metadata, anchor_header)
             save_payload_json(json_path, payload)
 
+        state["last_accepted_cycle_stamp"] = cycle_stamp
         saved_outputs = []
         if _SAVE_PARQUET:
             saved_outputs.append(str(parquet_path))
@@ -164,7 +177,8 @@ def main():
     print_log(f"{THIS_TIME}: Starting loss-map saver for study '{args.study_name}'")
     print_log(f"                     Repetitions: {args.repetitions}")
     print_log(f"                     Output dir: {study_dir(args.study_name)}")
-    print_log(f"                     BLM keys from blm_positions.json: {len(blm_keys)}")
+    print_log(f"                     BLM keys kept from blm_positions.json: {len(blm_keys)}")
+    print_log(f"                     Acquisition sources: {blm_sources}")
     print_log(f"                     Loss-map window: {_LOSS_MAP_WINDOW_MS}")
     print_log(f"                     Save parquet/json: {_SAVE_PARQUET}/{_SAVE_JSON}")
     japc.startSubscriptions()
