@@ -10,9 +10,13 @@ from json_utils import json_default
 
 # Fill this list on SWAN or in the CCC with the candidate devices you want to inspect.
 CANDIDATE_DEVICES = [
-    "SPS.BQ.CONT/ContinuousAcquisition",
     "SPS.BCTDC24.51454/Acquisition",
     "SpsLowLevelRF/DpOverPOffset",
+    "SpsLowLevelRF/RadialSteering",
+    "SPS.BQ.CONT/ContinuousAcquisition",
+    "SPS.BQ.QC/Acquisition",
+    "SPS.BQ.KICKED/Acquisition",
+    "SPS.BQ.KICKED/ContinuousAcquisition",
     "SA.RevFreq-ACQ/Acquisition",
     # Add more candidates here, for example:
     # "some/other/BBQAcquisition",

@@ -10,8 +10,8 @@ from bct import INJECTION_TIME_MS, beam_injected
 from dpp import dp_offset
 
 studydesc = "dp/p scan with full BBQ and BCT saving"
-shortname = "Q_DPP_SCAN_CHROM_0.154_0.3"
-repetitions = 5
+shortname = "Q_DPP_SCAN_CHROM_0.45_0.4_TUNE_20.13_20.21"
+repetitions = 10
 this_time = f"{pd.Timestamp.now(tz='UTC')}".split(".")[0]
 
 # ============================
@@ -26,9 +26,9 @@ _BCT = "SPS.BCTDC24.51454/Acquisition"
 _DPP = "SpsLowLevelRF/DpOverPOffset"
 _RADIAL = "SpsLowLevelRF/RadialSteering"
 
-_START_DPP_MS = 1800
+_START_DPP_MS = 1000
 _END_DPP_MS = 2880
-_DPP_RISE_TIME_MS = 1500
+_DPP_RISE_TIME_MS = 700
 _SURVIVAL_CHECK_AFTER_MS = 2400
 
 offsets = np.array([x for y in np.arange(0, 6.75e-3, 2.5e-4) for x in [-y, y]])[1:]
@@ -41,8 +41,9 @@ offsets = np.array([x for y in np.arange(0, 6.75e-3, 2.5e-4) for x in [-y, y]])[
 japc = pyjapc.PyJapc(_SPS_USER, incaAcceleratorName=None)
 variables = {
     "first_callback": True,
-    "repetition": 1,
+    "repetition": 0,
     "offset_id": 0,
+    "previous_offset": 0.,
     "finished": False,
     "t_settings_set": pd.Timestamp.now(tz="UTC"),
 }
@@ -69,17 +70,18 @@ def advance_scan():
     variables["finished"] = True
     return False
 
-def skip_existing_results():
+def next_step():
+    changed = advance_scan()
     while not variables["finished"] and result_exists(name()):
-        changed = advance_scan()
+        changed2 = advance_scan()
+        changed = changed or changed2
         if variables["finished"]:
-            return False
-        if changed:
             return True
-    return False
+    return changed
 
 def apply_dp_offset(target_value):
-    dp_offset(offset=target_value, t_ms=2000,  # to get roughly into the injection process
+    dp_offset(offset=float(target_value - variables["previous_offset"]),
+              t_ms=2000,  # to get roughly into the injection process
               t_start=_START_DPP_MS - _DPP_RISE_TIME_MS,
               t_start_plateau=_START_DPP_MS,
               t_end_plateau=_END_DPP_MS,
@@ -87,6 +89,7 @@ def apply_dp_offset(target_value):
               cycle=_CYCLE_NAME,
               description = f"Chroma measurement: DP={target_value:+.6e}")
     variables["t_settings_set"] = pd.Timestamp.now(tz="UTC")
+    variables["previous_offset"] = target_value
     print_log(f"Applied {_DPP} = {target_value:+.6e}")
 
 def print_log(*args, **kwargs):
@@ -132,6 +135,7 @@ def chroma_measurement(_name, data, header):
 
     # First BBQ callback is only used to place the first dp/p setting.
     if variables["first_callback"]:
+        next_step()
         apply_dp_offset(current_offset())
         variables["first_callback"] = False
         return
@@ -159,8 +163,8 @@ def chroma_measurement(_name, data, header):
         print_log(f" -> OK  (estimate: H={valH:.4f}, V={valV:.4f})")
 
     # Advance repetition first. Only move to the next offset after 5 saved files.
-    offset_changed = advance_scan()
-    offset_changed = skip_existing_results() or offset_changed
+    #offset_changed = advance_scan()
+    offset_changed = next_step()
 
     if variables["finished"]:
         apply_dp_offset(0.)
