@@ -34,7 +34,7 @@ def find_settings(correctors, cycle):
 def dp_offset(offset, t_ms, t_start, t_start_plateau, t_end_plateau, t_end,
               cycle, description=None):
     if not offset:
-        print("No bump requested")
+        print("No DP offset requested")
         return
 
     cycle = context_service.findStandAloneCycle(cycle)
