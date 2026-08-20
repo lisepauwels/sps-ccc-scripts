@@ -730,3 +730,285 @@ Cycle 2026-05-27 01:40:18.135000+00:00: offset -1.000000e-03 rep 6 -> OK  (estim
 Cycle 2026-05-27 01:40:33.735000+00:00: offset -1.000000e-03 rep 7 -> OK  (estimate: H=0.1211, V=0.2065)
 Cycle 2026-05-27 01:40:49.335000+00:00: offset -1.000000e-03 rep 8 -> OK  (estimate: H=0.1211, V=0.2065)
 Cycle 2026-05-27 01:41:08.535000+00:00: offset -1.000000e-03 rep 9 -> OK  (estimate: H=0.1221, V=0.2075)
+Cycle 2026-05-27 01:41:24.135000+00:00: offset -1.000000e-03 rep 10 -> OK  (estimate: H=0.1221, V=0.2065)
+Applied SpsLowLevelRF/DpOverPOffset = +1.000000e-03
+Cycle 2026-05-27 01:41:39.735000+00:00: offset +1.000000e-03 rep 6 -> OK  (estimate: H=0.1401, V=0.2129)
+Cycle 2026-05-27 01:41:58.935000+00:00: offset +1.000000e-03 rep 7 -> OK  (estimate: H=0.1396, V=0.2129)
+Cycle 2026-05-27 01:42:14.535000+00:00: offset +1.000000e-03 rep 8 -> OK  (estimate: H=0.1401, V=0.2139)
+Cycle 2026-05-27 01:42:30.135000+00:00: offset +1.000000e-03 rep 9 -> OK  (estimate: H=0.1396, V=0.2163)
+Cycle 2026-05-27 01:42:49.335000+00:00: offset +1.000000e-03 rep 10 -> OK  (estimate: H=0.1396, V=0.2139)
+Applied SpsLowLevelRF/DpOverPOffset = -1.250000e-03
+Cycle 2026-05-27 01:43:04.935000+00:00: offset -1.250000e-03 rep 6 -> OK  (estimate: H=0.1201, V=0.2056)
+Cycle 2026-05-27 01:43:20.535000+00:00: offset -1.250000e-03 rep 7 -> OK  (estimate: H=0.1206, V=0.2021)
+Cycle 2026-05-27 01:43:39.735000+00:00: offset -1.250000e-03 rep 8 -> OK  (estimate: H=0.1201, V=0.2056)
+Cycle 2026-05-27 01:43:55.335000+00:00: offset -1.250000e-03 rep 9 -> OK  (estimate: H=0.1201, V=0.2021)
+Cycle 2026-05-27 01:44:10.935000+00:00: offset -1.250000e-03 rep 10 -> OK  (estimate: H=0.1211, V=0.2031)
+Applied SpsLowLevelRF/DpOverPOffset = +1.250000e-03
+Cycle 2026-05-27 01:44:30.135000+00:00: offset +1.250000e-03 rep 6 -> OK  (estimate: H=0.1416, V=0.2183)
+Cycle 2026-05-27 01:44:45.735000+00:00: offset +1.250000e-03 rep 7 -> OK  (estimate: H=0.1426, V=0.2183)
+Cycle 2026-05-27 01:45:01.335000+00:00: offset +1.250000e-03 rep 8 -> OK  (estimate: H=0.1416, V=0.2148)
+Cycle 2026-05-27 01:45:20.535000+00:00: offset +1.250000e-03 rep 9 -> OK  (estimate: H=0.1416, V=0.2148)
+Cycle 2026-05-27 01:45:36.135000+00:00: offset +1.250000e-03 rep 10 -> OK  (estimate: H=0.1426, V=0.2139)
+Applied SpsLowLevelRF/DpOverPOffset = -1.500000e-03
+Cycle 2026-05-27 01:45:51.735000+00:00: offset -1.500000e-03 rep 6 -> OK  (estimate: H=0.1196, V=0.2012)
+Cycle 2026-05-27 01:46:10.935000+00:00: offset -1.500000e-03 rep 7 -> OK  (estimate: H=0.1196, V=0.2021)
+Cycle 2026-05-27 01:46:26.535000+00:00: offset -1.500000e-03 rep 8 -> OK  (estimate: H=0.1196, V=0.2012)
+Cycle 2026-05-27 01:46:42.135000+00:00: offset -1.500000e-03 rep 9 -> OK  (estimate: H=0.1196, V=0.2012)
+Cycle 2026-05-27 01:47:01.335000+00:00: offset -1.500000e-03 rep 10 -> OK  (estimate: H=0.1196, V=0.2012)
+Applied SpsLowLevelRF/DpOverPOffset = +1.500000e-03
+Cycle 2026-05-27 01:47:16.935000+00:00: offset +1.500000e-03 rep 6 -> OK  (estimate: H=0.1426, V=0.2183)
+Cycle 2026-05-27 01:47:32.535000+00:00: offset +1.500000e-03 rep 7 -> OK  (estimate: H=0.1436, V=0.2183)
+Cycle 2026-05-27 01:47:51.735000+00:00: offset +1.500000e-03 rep 8 -> OK  (estimate: H=0.1426, V=0.2173)
+Cycle 2026-05-27 01:48:07.335000+00:00: offset +1.500000e-03 rep 9 -> OK  (estimate: H=0.1436, V=0.2183)
+Cycle 2026-05-27 01:48:22.935000+00:00: offset +1.500000e-03 rep 10 -> OK  (estimate: H=0.1460, V=0.2173)
+Applied SpsLowLevelRF/DpOverPOffset = -1.750000e-03
+Cycle 2026-05-27 01:48:42.135000+00:00: offset -1.750000e-03 rep 6 -> OK  (estimate: H=0.1187, V=0.2007)
+Cycle 2026-05-27 01:48:57.735000+00:00: offset -1.750000e-03 rep 7 -> OK  (estimate: H=0.1187, V=0.2002)
+Cycle 2026-05-27 01:49:13.335000+00:00: offset -1.750000e-03 rep 8 -> OK  (estimate: H=0.1187, V=0.2002)
+Cycle 2026-05-27 01:49:32.535000+00:00: offset -1.750000e-03 rep 9 -> OK  (estimate: H=0.1187, V=0.2002)
+Cycle 2026-05-27 01:49:48.135000+00:00: offset -1.750000e-03 rep 10 -> OK  (estimate: H=0.1196, V=0.2007)
+Applied SpsLowLevelRF/DpOverPOffset = +1.750000e-03
+Cycle 2026-05-27 01:50:03.735000+00:00: offset +1.750000e-03 rep 6 -> OK  (estimate: H=0.1479, V=0.2192)
+Cycle 2026-05-27 01:50:22.935000+00:00: offset +1.750000e-03 rep 7 -> OK  (estimate: H=0.1479, V=0.2192)
+Cycle 2026-05-27 01:50:38.535000+00:00: offset +1.750000e-03 rep 8 -> OK  (estimate: H=0.1479, V=0.2183)
+Cycle 2026-05-27 01:50:54.135000+00:00: offset +1.750000e-03 rep 9 -> OK  (estimate: H=0.1479, V=0.2183)
+Cycle 2026-05-27 01:51:13.335000+00:00: offset +1.750000e-03 rep 10 -> OK  (estimate: H=0.1479, V=0.2192)
+Applied SpsLowLevelRF/DpOverPOffset = -2.000000e-03
+Cycle 2026-05-27 01:51:28.935000+00:00: offset -2.000000e-03 rep 6 -> OK  (estimate: H=0.1177, V=0.1987)
+Cycle 2026-05-27 01:51:44.535000+00:00: offset -2.000000e-03 rep 7 -> OK  (estimate: H=0.1177, V=0.1992)
+Cycle 2026-05-27 01:52:03.735000+00:00: offset -2.000000e-03 rep 8 -> OK  (estimate: H=0.1177, V=0.1987)
+Cycle 2026-05-27 01:52:19.335000+00:00: offset -2.000000e-03 rep 9 -> OK  (estimate: H=0.1187, V=0.1992)
+Cycle 2026-05-27 01:52:34.935000+00:00: offset -2.000000e-03 rep 10 -> OK  (estimate: H=0.1177, V=0.1987)
+Applied SpsLowLevelRF/DpOverPOffset = +2.000000e-03
+Cycle 2026-05-27 01:52:54.135000+00:00: offset +2.000000e-03 rep 6 -> OK  (estimate: H=0.1489, V=0.2207)
+Cycle 2026-05-27 01:53:09.735000+00:00: offset +2.000000e-03 rep 7 -> OK  (estimate: H=0.1484, V=0.2207)
+Cycle 2026-05-27 01:53:25.335000+00:00: offset +2.000000e-03 rep 8 -> OK  (estimate: H=0.1489, V=0.2197)
+Cycle 2026-05-27 01:53:44.535000+00:00: offset +2.000000e-03 rep 9 -> OK  (estimate: H=0.1489, V=0.2207)
+Cycle 2026-05-27 01:54:00.135000+00:00: offset +2.000000e-03 rep 10 -> OK  (estimate: H=0.1489, V=0.2207)
+Applied SpsLowLevelRF/DpOverPOffset = -2.250000e-03
+Cycle 2026-05-27 01:54:15.735000+00:00: offset -2.250000e-03 rep 6 -> OK  (estimate: H=0.1177, V=0.1978)
+Cycle 2026-05-27 01:54:34.935000+00:00: offset -2.250000e-03 rep 7 -> OK  (estimate: H=0.1167, V=0.1978)
+Cycle 2026-05-27 01:54:50.535000+00:00: offset -2.250000e-03 rep 8 -> OK  (estimate: H=0.1177, V=0.1978)
+Cycle 2026-05-27 01:55:06.135000+00:00: offset -2.250000e-03 rep 9 -> OK  (estimate: H=0.1167, V=0.1978)
+Cycle 2026-05-27 01:55:25.335000+00:00: offset -2.250000e-03 rep 10 -> OK  (estimate: H=0.1177, V=0.1978)
+Applied SpsLowLevelRF/DpOverPOffset = +2.250000e-03
+Cycle 2026-05-27 01:55:40.935000+00:00: offset +2.250000e-03 rep 6 -> OK  (estimate: H=0.1499, V=0.2207)
+Cycle 2026-05-27 01:55:56.535000+00:00: offset +2.250000e-03 rep 7 -> OK  (estimate: H=0.1499, V=0.2207)
+Cycle 2026-05-27 01:56:15.735000+00:00: offset +2.250000e-03 rep 8 -> OK  (estimate: H=0.1494, V=0.2217)
+Cycle 2026-05-27 01:56:31.335000+00:00: offset +2.250000e-03 rep 9 -> OK  (estimate: H=0.1499, V=0.2207)
+Cycle 2026-05-27 01:56:46.935000+00:00: offset +2.250000e-03 rep 10 -> OK  (estimate: H=0.1499, V=0.2207)
+Applied SpsLowLevelRF/DpOverPOffset = -2.500000e-03
+Cycle 2026-05-27 01:57:06.135000+00:00: offset -2.500000e-03 rep 6 -> OK  (estimate: H=0.1152, V=0.1958)
+Cycle 2026-05-27 01:57:21.735000+00:00: offset -2.500000e-03 rep 7 -> OK  (estimate: H=0.1143, V=0.1157)
+Cycle 2026-05-27 01:57:37.335000+00:00: offset -2.500000e-03 rep 8 -> OK  (estimate: H=0.1143, V=0.1924)
+Cycle 2026-05-27 01:57:56.535000+00:00: offset -2.500000e-03 rep 9 -> OK  (estimate: H=0.1143, V=0.1157)
+Cycle 2026-05-27 01:58:12.135000+00:00: offset -2.500000e-03 rep 10 -> OK  (estimate: H=0.1177, V=0.1958)
+Applied SpsLowLevelRF/DpOverPOffset = +2.500000e-03
+Cycle 2026-05-27 01:58:27.735000+00:00: offset +2.500000e-03 rep 6 -> OK  (estimate: H=0.1504, V=0.2227)
+Cycle 2026-05-27 01:58:46.935000+00:00: offset +2.500000e-03 rep 7 -> OK  (estimate: H=0.1514, V=0.2227)
+Cycle 2026-05-27 01:59:02.535000+00:00: offset +2.500000e-03 rep 8 -> OK  (estimate: H=0.1504, V=0.2261)
+Cycle 2026-05-27 01:59:18.135000+00:00: offset +2.500000e-03 rep 9 -> OK  (estimate: H=0.1509, V=0.2236)
+Cycle 2026-05-27 01:59:37.335000+00:00: offset +2.500000e-03 rep 10 -> OK  (estimate: H=0.1509, V=0.2227)
+Applied SpsLowLevelRF/DpOverPOffset = -2.750000e-03
+Cycle 2026-05-27 01:59:52.935000+00:00: offset -2.750000e-03 rep 6 -> OK  (estimate: H=0.1143, V=0.1904)
+Cycle 2026-05-27 02:00:08.535000+00:00: offset -2.750000e-03 rep 7 -> OK  (estimate: H=0.1143, V=0.1152)
+Cycle 2026-05-27 02:00:27.735000+00:00: offset -2.750000e-03 rep 8 -> OK  (estimate: H=0.1143, V=0.1157)
+Cycle 2026-05-27 02:00:43.335000+00:00: offset -2.750000e-03 rep 9 -> OK  (estimate: H=0.1143, V=0.1152)
+Cycle 2026-05-27 02:00:58.935000+00:00: offset -2.750000e-03 rep 10 -> OK  (estimate: H=0.1143, V=0.1157)
+Applied SpsLowLevelRF/DpOverPOffset = +2.750000e-03
+Cycle 2026-05-27 02:01:18.135000+00:00: offset +2.750000e-03 rep 6 -> OK  (estimate: H=0.1514, V=0.2271)
+Cycle 2026-05-27 02:01:33.735000+00:00: offset +2.750000e-03 rep 7 -> OK  (estimate: H=0.1523, V=0.2261)
+Cycle 2026-05-27 02:01:49.335000+00:00: offset +2.750000e-03 rep 8 -> OK  (estimate: H=0.1519, V=0.2280)
+Cycle 2026-05-27 02:02:08.535000+00:00: offset +2.750000e-03 rep 9 -> OK  (estimate: H=0.1514, V=0.2271)
+Cycle 2026-05-27 02:02:24.135000+00:00: offset +2.750000e-03 rep 10 -> OK  (estimate: H=0.1523, V=0.2271)
+Applied SpsLowLevelRF/DpOverPOffset = -3.000000e-03
+Cycle 2026-05-27 02:02:39.735000+00:00: offset -3.000000e-03 rep 6 -> OK  (estimate: H=0.1143, V=0.1147)
+Cycle 2026-05-27 02:02:58.935000+00:00: offset -3.000000e-03 rep 7 -> OK  (estimate: H=0.1143, V=0.1147)
+Cycle 2026-05-27 02:03:14.535000+00:00: offset -3.000000e-03 rep 8 -> OK  (estimate: H=0.1143, V=0.1147)
+Cycle 2026-05-27 02:03:30.135000+00:00: offset -3.000000e-03 rep 9 -> OK  (estimate: H=0.1143, V=0.1147)
+Cycle 2026-05-27 02:03:49.335000+00:00: offset -3.000000e-03 rep 10 -> OK  (estimate: H=0.1133, V=0.1147)
+Applied SpsLowLevelRF/DpOverPOffset = +3.000000e-03
+Cycle 2026-05-27 02:04:04.935000+00:00: offset +3.000000e-03 rep 6 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:04:20.535000+00:00: offset +3.000000e-03 rep 7 -> OK  (estimate: H=0.1523, V=0.1528)
+Cycle 2026-05-27 02:04:39.735000+00:00: offset +3.000000e-03 rep 8 -> OK  (estimate: H=0.1523, V=0.2280)
+Cycle 2026-05-27 02:04:55.335000+00:00: offset +3.000000e-03 rep 9 -> OK  (estimate: H=0.1523, V=0.2305)
+Cycle 2026-05-27 02:05:10.935000+00:00: offset +3.000000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1538)
+Applied SpsLowLevelRF/DpOverPOffset = -3.250000e-03
+Cycle 2026-05-27 02:05:30.135000+00:00: offset -3.250000e-03 rep 6 -> OK  (estimate: H=0.1138, V=0.1147)
+Cycle 2026-05-27 02:05:45.735000+00:00: offset -3.250000e-03 rep 7 -> OK  (estimate: H=0.1133, V=0.1138)
+Cycle 2026-05-27 02:06:01.335000+00:00: offset -3.250000e-03 rep 8 -> OK  (estimate: H=0.1143, V=0.1147)
+Cycle 2026-05-27 02:06:20.535000+00:00: offset -3.250000e-03 rep 9 -> OK  (estimate: H=0.1133, V=0.1143)
+Cycle 2026-05-27 02:06:36.135000+00:00: offset -3.250000e-03 rep 10 -> OK  (estimate: H=0.1133, V=0.1143)
+Applied SpsLowLevelRF/DpOverPOffset = +3.250000e-03
+Cycle 2026-05-27 02:06:51.735000+00:00: offset +3.250000e-03 rep 6 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:07:10.935000+00:00: offset +3.250000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:07:26.535000+00:00: offset +3.250000e-03 rep 8 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:07:42.135000+00:00: offset +3.250000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.2305)
+Cycle 2026-05-27 02:08:01.335000+00:00: offset +3.250000e-03 rep 10 -> OK  (estimate: H=0.1558, V=0.1538)
+Applied SpsLowLevelRF/DpOverPOffset = -3.500000e-03
+Cycle 2026-05-27 02:08:16.935000+00:00: offset -3.500000e-03 rep 6 -> OK  (estimate: H=0.1133, V=0.1138)
+Cycle 2026-05-27 02:08:32.535000+00:00: offset -3.500000e-03 rep 7 -> OK  (estimate: H=0.1133, V=0.1143)
+Cycle 2026-05-27 02:08:51.735000+00:00: offset -3.500000e-03 rep 8 -> OK  (estimate: H=0.1123, V=0.1138)
+Cycle 2026-05-27 02:09:07.335000+00:00: offset -3.500000e-03 rep 9 -> OK  (estimate: H=0.1133, V=0.1143)
+Cycle 2026-05-27 02:09:22.935000+00:00: offset -3.500000e-03 rep 10 -> OK  (estimate: H=0.1133, V=0.1138)
+Applied SpsLowLevelRF/DpOverPOffset = +3.500000e-03
+Cycle 2026-05-27 02:09:42.135000+00:00: offset +3.500000e-03 rep 6 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:09:57.735000+00:00: offset +3.500000e-03 rep 7 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:10:13.335000+00:00: offset +3.500000e-03 rep 8 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:10:32.535000+00:00: offset +3.500000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:10:48.135000+00:00: offset +3.500000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1543)
+Applied SpsLowLevelRF/DpOverPOffset = -3.750000e-03
+Cycle 2026-05-27 02:11:03.735000+00:00: offset -3.750000e-03 rep 6 -> OK  (estimate: H=0.1133, V=0.1138)
+Cycle 2026-05-27 02:11:22.935000+00:00: offset -3.750000e-03 rep 7 -> OK  (estimate: H=0.1133, V=0.1138)
+Cycle 2026-05-27 02:11:38.535000+00:00: offset -3.750000e-03 rep 8 -> OK  (estimate: H=0.1123, V=0.1138)
+Cycle 2026-05-27 02:11:54.135000+00:00: offset -3.750000e-03 rep 9 -> OK  (estimate: H=0.1133, V=0.1138)
+Cycle 2026-05-27 02:12:13.335000+00:00: offset -3.750000e-03 rep 10 -> OK  (estimate: H=0.1133, V=0.1138)
+Applied SpsLowLevelRF/DpOverPOffset = +3.750000e-03
+Cycle 2026-05-27 02:12:28.935000+00:00: offset +3.750000e-03 rep 6 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:12:44.535000+00:00: offset +3.750000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:13:03.735000+00:00: offset +3.750000e-03 rep 8 -> OK  (estimate: H=0.1543, V=0.1548)
+Cycle 2026-05-27 02:13:19.335000+00:00: offset +3.750000e-03 rep 9 -> OK  (estimate: H=0.1543, V=0.1548)
+Cycle 2026-05-27 02:13:34.935000+00:00: offset +3.750000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1548)
+Applied SpsLowLevelRF/DpOverPOffset = -4.000000e-03
+Cycle 2026-05-27 02:13:54.135000+00:00: offset -4.000000e-03 rep 6 -> OK  (estimate: H=0.1128, V=0.1138)
+Cycle 2026-05-27 02:14:09.735000+00:00: offset -4.000000e-03 rep 7 -> OK  (estimate: H=0.1123, V=0.1870)
+Cycle 2026-05-27 02:14:25.335000+00:00: offset -4.000000e-03 rep 8 -> OK  (estimate: H=0.1123, V=0.1133)
+Cycle 2026-05-27 02:14:44.535000+00:00: offset -4.000000e-03 rep 9 -> OK  (estimate: H=0.1123, V=0.1870)
+Cycle 2026-05-27 02:15:00.135000+00:00: offset -4.000000e-03 rep 10 -> OK  (estimate: H=0.1123, V=0.1133)
+Applied SpsLowLevelRF/DpOverPOffset = +4.000000e-03
+Cycle 2026-05-27 02:15:15.735000+00:00: offset +4.000000e-03 rep 6 -> OK  (estimate: H=0.1553, V=0.1543)
+Cycle 2026-05-27 02:15:34.935000+00:00: offset +4.000000e-03 rep 7 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:15:50.535000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:16:06.135000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:16:25.335000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:16:40.935000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:16:56.535000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:17:15.735000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:17:31.335000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:17:46.935000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:18:06.135000+00:00: offset +4.000000e-03 rep 8 -> ERROR. No beam before measurement window. Trying again.
+Cycle 2026-05-27 02:18:21.735000+00:00: offset +4.000000e-03 rep 8 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:18:37.335000+00:00: offset +4.000000e-03 rep 9 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:18:56.535000+00:00: offset +4.000000e-03 rep 10 -> OK  (estimate: H=0.1543, V=0.1553)
+Applied SpsLowLevelRF/DpOverPOffset = -4.250000e-03
+Cycle 2026-05-27 02:19:12.135000+00:00: offset -4.250000e-03 rep 6 -> OK  (estimate: H=0.1118, V=0.1104)
+Cycle 2026-05-27 02:19:27.735000+00:00: offset -4.250000e-03 rep 7 -> OK  (estimate: H=0.1123, V=0.1128)
+Cycle 2026-05-27 02:19:46.935000+00:00: offset -4.250000e-03 rep 8 -> OK  (estimate: H=0.1118, V=0.1128)
+Cycle 2026-05-27 02:20:02.535000+00:00: offset -4.250000e-03 rep 9 -> OK  (estimate: H=0.1128, V=0.1138)
+Cycle 2026-05-27 02:20:18.135000+00:00: offset -4.250000e-03 rep 10 -> OK  (estimate: H=0.1123, V=0.1128)
+Applied SpsLowLevelRF/DpOverPOffset = +4.250000e-03
+Cycle 2026-05-27 02:20:37.335000+00:00: offset +4.250000e-03 rep 6 -> OK  (estimate: H=0.1543, V=0.1548)
+Cycle 2026-05-27 02:20:52.935000+00:00: offset +4.250000e-03 rep 7 -> OK  (estimate: H=0.1548, V=0.1543)
+Cycle 2026-05-27 02:21:08.535000+00:00: offset +4.250000e-03 rep 8 -> OK  (estimate: H=0.1548, V=0.1533)
+Cycle 2026-05-27 02:21:27.735000+00:00: offset +4.250000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:21:43.335000+00:00: offset +4.250000e-03 rep 10 -> OK  (estimate: H=0.1543, V=0.1543)
+Applied SpsLowLevelRF/DpOverPOffset = -4.500000e-03
+Cycle 2026-05-27 02:21:58.935000+00:00: offset -4.500000e-03 rep 6 -> OK  (estimate: H=0.1123, V=0.1128)
+Cycle 2026-05-27 02:22:18.135000+00:00: offset -4.500000e-03 rep 7 -> OK  (estimate: H=0.1118, V=0.1128)
+Cycle 2026-05-27 02:22:33.735000+00:00: offset -4.500000e-03 rep 8 -> OK  (estimate: H=0.1123, V=0.1138)
+Cycle 2026-05-27 02:22:49.335000+00:00: offset -4.500000e-03 rep 9 -> OK  (estimate: H=0.1123, V=0.1128)
+Cycle 2026-05-27 02:23:08.535000+00:00: offset -4.500000e-03 rep 10 -> OK  (estimate: H=0.1118, V=0.1128)
+Applied SpsLowLevelRF/DpOverPOffset = +4.500000e-03
+Cycle 2026-05-27 02:23:24.135000+00:00: offset +4.500000e-03 rep 6 -> OK  (estimate: H=0.1538, V=0.1533)
+Cycle 2026-05-27 02:23:39.735000+00:00: offset +4.500000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:23:58.935000+00:00: offset +4.500000e-03 rep 8 -> OK  (estimate: H=0.1523, V=0.1533)
+Cycle 2026-05-27 02:24:14.535000+00:00: offset +4.500000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1533)
+Cycle 2026-05-27 02:24:30.135000+00:00: offset +4.500000e-03 rep 10 -> OK  (estimate: H=0.1528, V=0.1538)
+Applied SpsLowLevelRF/DpOverPOffset = -4.750000e-03
+Cycle 2026-05-27 02:24:49.335000+00:00: offset -4.750000e-03 rep 6 -> OK  (estimate: H=0.1113, V=0.1709)
+Cycle 2026-05-27 02:25:04.935000+00:00: offset -4.750000e-03 rep 7 -> OK  (estimate: H=0.1113, V=0.1792)
+Cycle 2026-05-27 02:25:20.535000+00:00: offset -4.750000e-03 rep 8 -> OK  (estimate: H=0.1118, V=0.1709)
+Cycle 2026-05-27 02:25:39.735000+00:00: offset -4.750000e-03 rep 9 -> OK  (estimate: H=0.1113, V=0.1792)
+Cycle 2026-05-27 02:25:55.335000+00:00: offset -4.750000e-03 rep 10 -> OK  (estimate: H=0.1108, V=0.1792)
+Applied SpsLowLevelRF/DpOverPOffset = +4.750000e-03
+Cycle 2026-05-27 02:26:10.935000+00:00: offset +4.750000e-03 rep 6 -> OK  (estimate: H=0.1548, V=0.1538)
+Cycle 2026-05-27 02:26:30.135000+00:00: offset +4.750000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:26:45.735000+00:00: offset +4.750000e-03 rep 8 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:27:01.335000+00:00: offset +4.750000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:27:20.535000+00:00: offset +4.750000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1533)
+Applied SpsLowLevelRF/DpOverPOffset = -5.000000e-03
+Cycle 2026-05-27 02:27:36.135000+00:00: offset -5.000000e-03 rep 6 -> OK  (estimate: H=0.1113, V=0.1699)
+Cycle 2026-05-27 02:27:51.735000+00:00: offset -5.000000e-03 rep 7 -> OK  (estimate: H=0.1113, V=0.1699)
+Cycle 2026-05-27 02:28:10.935000+00:00: offset -5.000000e-03 rep 8 -> OK  (estimate: H=0.1108, V=0.1709)
+Cycle 2026-05-27 02:28:26.535000+00:00: offset -5.000000e-03 rep 9 -> OK  (estimate: H=0.1113, V=0.1704)
+Cycle 2026-05-27 02:28:42.135000+00:00: offset -5.000000e-03 rep 10 -> OK  (estimate: H=0.1123, V=0.1128)
+Applied SpsLowLevelRF/DpOverPOffset = +5.000000e-03
+Cycle 2026-05-27 02:29:01.335000+00:00: offset +5.000000e-03 rep 6 -> OK  (estimate: H=0.1548, V=0.1538)
+Cycle 2026-05-27 02:29:16.935000+00:00: offset +5.000000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:29:32.535000+00:00: offset +5.000000e-03 rep 8 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:29:51.735000+00:00: offset +5.000000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:30:07.335000+00:00: offset +5.000000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1538)
+Applied SpsLowLevelRF/DpOverPOffset = -5.250000e-03
+Cycle 2026-05-27 02:30:22.935000+00:00: offset -5.250000e-03 rep 6 -> OK  (estimate: H=0.1108, V=0.1694)
+Cycle 2026-05-27 02:30:42.135000+00:00: offset -5.250000e-03 rep 7 -> OK  (estimate: H=0.1099, V=0.1694)
+Cycle 2026-05-27 02:30:57.735000+00:00: offset -5.250000e-03 rep 8 -> OK  (estimate: H=0.1104, V=0.1685)
+Cycle 2026-05-27 02:31:13.335000+00:00: offset -5.250000e-03 rep 9 -> OK  (estimate: H=0.1104, V=0.1094)
+Cycle 2026-05-27 02:31:32.535000+00:00: offset -5.250000e-03 rep 10 -> OK  (estimate: H=0.1108, V=0.1685)
+Applied SpsLowLevelRF/DpOverPOffset = +5.250000e-03
+Cycle 2026-05-27 02:31:48.135000+00:00: offset +5.250000e-03 rep 6 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:32:03.735000+00:00: offset +5.250000e-03 rep 7 -> OK  (estimate: H=0.1548, V=0.1543)
+Cycle 2026-05-27 02:32:22.935000+00:00: offset +5.250000e-03 rep 8 -> OK  (estimate: H=0.1533, V=0.1543)
+Cycle 2026-05-27 02:32:38.535000+00:00: offset +5.250000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.1538)
+Cycle 2026-05-27 02:32:54.135000+00:00: offset +5.250000e-03 rep 10 -> OK  (estimate: H=0.1538, V=0.2603)
+Applied SpsLowLevelRF/DpOverPOffset = -5.500000e-03
+Cycle 2026-05-27 02:33:13.335000+00:00: offset -5.500000e-03 rep 6 -> OK  (estimate: H=0.1099, V=0.1675)
+Cycle 2026-05-27 02:33:28.935000+00:00: offset -5.500000e-03 rep 7 -> OK  (estimate: H=0.1099, V=0.1094)
+Cycle 2026-05-27 02:33:44.535000+00:00: offset -5.500000e-03 rep 8 -> OK  (estimate: H=0.1099, V=0.1660)
+Cycle 2026-05-27 02:34:03.735000+00:00: offset -5.500000e-03 rep 9 -> OK  (estimate: H=0.1099, V=0.1675)
+Cycle 2026-05-27 02:34:19.335000+00:00: offset -5.500000e-03 rep 10 -> OK  (estimate: H=0.1104, V=0.1675)
+Applied SpsLowLevelRF/DpOverPOffset = +5.500000e-03
+Cycle 2026-05-27 02:34:34.935000+00:00: offset +5.500000e-03 rep 6 -> OK  (estimate: H=0.1543, V=0.1548)
+Cycle 2026-05-27 02:34:54.135000+00:00: offset +5.500000e-03 rep 7 -> OK  (estimate: H=0.1558, V=0.1548)
+Cycle 2026-05-27 02:35:09.735000+00:00: offset +5.500000e-03 rep 8 -> OK  (estimate: H=0.1538, V=0.2563)
+Cycle 2026-05-27 02:35:25.335000+00:00: offset +5.500000e-03 rep 9 -> OK  (estimate: H=0.1533, V=0.2529)
+Cycle 2026-05-27 02:35:44.535000+00:00: offset +5.500000e-03 rep 10 -> OK  (estimate: H=0.1533, V=0.1538)
+Applied SpsLowLevelRF/DpOverPOffset = -5.750000e-03
+Cycle 2026-05-27 02:36:00.135000+00:00: offset -5.750000e-03 rep 6 -> OK  (estimate: H=0.1089, V=0.1641)
+Cycle 2026-05-27 02:36:15.735000+00:00: offset -5.750000e-03 rep 7 -> OK  (estimate: H=0.1089, V=0.1655)
+Cycle 2026-05-27 02:36:34.935000+00:00: offset -5.750000e-03 rep 8 -> OK  (estimate: H=0.1104, V=0.1641)
+Cycle 2026-05-27 02:36:50.535000+00:00: offset -5.750000e-03 rep 9 -> OK  (estimate: H=0.1074, V=0.1641)
+Cycle 2026-05-27 02:37:06.135000+00:00: offset -5.750000e-03 rep 10 -> OK  (estimate: H=0.1089, V=0.1631)
+Applied SpsLowLevelRF/DpOverPOffset = +5.750000e-03
+Cycle 2026-05-27 02:37:25.335000+00:00: offset +5.750000e-03 rep 6 -> OK  (estimate: H=0.1543, V=0.2583)
+Cycle 2026-05-27 02:37:40.935000+00:00: offset +5.750000e-03 rep 7 -> OK  (estimate: H=0.1543, V=0.2583)
+Cycle 2026-05-27 02:37:56.535000+00:00: offset +5.750000e-03 rep 8 -> OK  (estimate: H=0.1558, V=0.2583)
+Cycle 2026-05-27 02:38:15.735000+00:00: offset +5.750000e-03 rep 9 -> OK  (estimate: H=0.1543, V=0.2583)
+Cycle 2026-05-27 02:38:31.335000+00:00: offset +5.750000e-03 rep 10 -> OK  (estimate: H=0.1538, V=0.2583)
+Applied SpsLowLevelRF/DpOverPOffset = -6.000000e-03
+Cycle 2026-05-27 02:38:46.935000+00:00: offset -6.000000e-03 rep 6 -> OK  (estimate: H=0.1055, V=0.0000)
+Cycle 2026-05-27 02:39:06.135000+00:00: offset -6.000000e-03 rep 7 -> OK  (estimate: H=0.1055, V=0.0000)
+Cycle 2026-05-27 02:39:21.735000+00:00: offset -6.000000e-03 rep 8 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:39:37.335000+00:00: offset -6.000000e-03 rep 9 -> OK  (estimate: H=0.1064, V=0.0000)
+Cycle 2026-05-27 02:39:56.535000+00:00: offset -6.000000e-03 rep 10 -> OK  (estimate: H=0.1064, V=0.0000)
+Applied SpsLowLevelRF/DpOverPOffset = +6.000000e-03
+Cycle 2026-05-27 02:40:12.135000+00:00: offset +6.000000e-03 rep 6 -> OK  (estimate: H=0.1533, V=0.2612)
+Cycle 2026-05-27 02:40:27.735000+00:00: offset +6.000000e-03 rep 7 -> OK  (estimate: H=0.1533, V=0.2607)
+Cycle 2026-05-27 02:40:46.935000+00:00: offset +6.000000e-03 rep 8 -> OK  (estimate: H=0.1543, V=0.2607)
+Cycle 2026-05-27 02:41:02.535000+00:00: offset +6.000000e-03 rep 9 -> OK  (estimate: H=0.1538, V=0.2607)
+Cycle 2026-05-27 02:41:18.135000+00:00: offset +6.000000e-03 rep 10 -> OK  (estimate: H=0.1538, V=0.2607)
+Applied SpsLowLevelRF/DpOverPOffset = -6.250000e-03
+Cycle 2026-05-27 02:41:37.335000+00:00: offset -6.250000e-03 rep 6 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:41:52.935000+00:00: offset -6.250000e-03 rep 7 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:42:08.535000+00:00: offset -6.250000e-03 rep 8 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:42:27.735000+00:00: offset -6.250000e-03 rep 9 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:42:43.335000+00:00: offset -6.250000e-03 rep 10 -> OK  (estimate: H=0.0000, V=0.0000)
+Applied SpsLowLevelRF/DpOverPOffset = +6.250000e-03
+Cycle 2026-05-27 02:42:58.935000+00:00: offset +6.250000e-03 rep 6 -> OK  (estimate: H=0.1543, V=0.2671)
+Cycle 2026-05-27 02:43:18.135000+00:00: offset +6.250000e-03 rep 7 -> OK  (estimate: H=0.1543, V=0.2671)
+Cycle 2026-05-27 02:43:33.735000+00:00: offset +6.250000e-03 rep 8 -> OK  (estimate: H=0.1553, V=0.2690)
+Cycle 2026-05-27 02:43:49.335000+00:00: offset +6.250000e-03 rep 9 -> OK  (estimate: H=0.1553, V=0.2681)
+Cycle 2026-05-27 02:44:08.535000+00:00: offset +6.250000e-03 rep 10 -> OK  (estimate: H=0.1553, V=0.2627)
+Applied SpsLowLevelRF/DpOverPOffset = -6.500000e-03
+Cycle 2026-05-27 02:44:24.135000+00:00: offset -6.500000e-03 rep 6 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:44:39.735000+00:00: offset -6.500000e-03 rep 7 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:44:58.935000+00:00: offset -6.500000e-03 rep 8 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:45:14.535000+00:00: offset -6.500000e-03 rep 9 -> OK  (estimate: H=0.0000, V=0.0000)
+Cycle 2026-05-27 02:45:30.135000+00:00: offset -6.500000e-03 rep 10 -> OK  (estimate: H=0.0000, V=0.0000)
+Applied SpsLowLevelRF/DpOverPOffset = +6.500000e-03
+Cycle 2026-05-27 02:45:49.335000+00:00: offset +6.500000e-03 rep 6 -> OK  (estimate: H=0.1553, V=0.2700)
+Cycle 2026-05-27 02:46:04.935000+00:00: offset +6.500000e-03 rep 7 -> OK  (estimate: H=0.1553, V=0.2700)
+Cycle 2026-05-27 02:46:20.535000+00:00: offset +6.500000e-03 rep 8 -> OK  (estimate: H=0.1577, V=0.2700)
+Cycle 2026-05-27 02:46:39.735000+00:00: offset +6.500000e-03 rep 9 -> OK  (estimate: H=0.1567, V=0.2700)
+Cycle 2026-05-27 02:46:55.335000+00:00: offset +6.500000e-03 rep 10 -> OK  (estimate: H=0.1577, V=0.2700)
+Applied SpsLowLevelRF/DpOverPOffset = +0.000000e+00
+Cool, we are done!

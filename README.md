@@ -4,11 +4,7 @@ This repo now contains two scripts:
 
 - `run_dpp_scan.py`: save script. This is the important one.
 - `live_tune_monitor.py`: optional live tune monitor that can run in parallel.
-- `loss_map_save.py`: save raw BLM and BCT loss-map data to parquet.
-- `loss_map_live_plot.py`: live BLM loss-map plotting for the last three acquisitions.
-- `loss_map_postprocess.py`: build 300 dpi PDF loss-map figures from saved parquet files.
-- `loss_map_common.py`: shared loss-map parsing, normalization, and plotting helpers.
-- `loss_map_monitor.py`: compatibility stub that points to the split scripts above.
+- `loss_map_monitor.py`: optional live BLM loss-map monitor and saver.
 - `inspect_ccc_devices.py`: SWAN/CCC inspection helper for checking device contents.
 - `bct.py`: BCT helpers for beam-presence checks.
 - `bbq.py`: BBQ parsing plus a first-pass tune estimator.
@@ -139,95 +135,27 @@ python3 live_tune_monitor.py
 
 ## BLM Loss Maps
 
-The loss-map workflow is now split into three scripts:
+`loss_map_monitor.py` is a first scaffold for live BLM plotting during tune chirp or radial-steering scans.
 
-- [loss_map_save.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_save.py)
-  subscribes once per cycle, checks that beam is present, and saves one parquet file per successful repetition.
-- [loss_map_live_plot.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_live_plot.py)
-  shows four live windows: the latest total-loss trace plus the last three loss maps.
-- [loss_map_postprocess.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_postprocess.py)
-  reads the saved parquet files and writes 300 dpi PDF figures.
+It assumes the SWAN pattern you found:
 
-It uses fixed SPS acquisition sources:
+- `BLRSPS_<pos>:ExpertAcquisition:beamLossMeasurements_gray`
+- `BLRSPS_<pos>:ExpertAcquisition:beamLossMeasurementTimes_ms`
+- `BLRSPS_<pos>:ExpertAcquisition:channelNames`
 
-- `BLRSPS_BA1/ExpertAcquisition` through `BLRSPS_BA6/ExpertAcquisition`
-- `BLRSPS_LSS1/ExpertAcquisition`
-- `BLRSPS_LSS2/ExpertAcquisition`
-- `BLRSPS_LSS4/ExpertAcquisition`
-- `BLRSPS_LSS5/ExpertAcquisition`
-- `BLRSPS_LSS6/ExpertAcquisition`
+The intended workflow is:
 
-with JAPC field access through:
+- fetch full BLM waveforms for a configured list of ExpertAcquisition prefixes
+- keep only a configurable cycle-time window
+- save all samples in that window
+- choose the plotting time from the maximum total loss over all channels
+- build the live loss map from `blm_positions.json`
+- plot the loss map on a logarithmic scale
+- show monitors with no usable signal as blue points at the plot floor
 
-- `...#channelNames`
-- `...#beamLossMeasurementTimes_ms`
-- `...#beamLossMeasurements_gray`
+This means:
 
-The BLM keys in [blm_positions.json](/Users/lisepauwels/phd/code/sps-ccc-scripts/blm_positions.json) are used as the whitelist of channels to keep, save, and plot. Transfer-line channels that are not in that file are ignored.
+- yes, save timestamps and full waveforms for post-processing
+- yes, also do live plotting from the selected max-loss time
 
-The saver and live plotter also gate on the subscribed BCT callback itself:
-
-- use the callback `anchor_value` as the BCT payload for that exact cycle
-- accept only callbacks from the selected MD user / selector
-- skip duplicate accepted `cycleStamp` values
-
-The save format is:
-
-```text
-../sps-measurements/lossmaps/<study_name>/id1.parquet
-../sps-measurements/lossmaps/<study_name>/id1.json
-../sps-measurements/lossmaps/<study_name>/id2.parquet
-...
-```
-
-Each repetition parquet contains:
-
-- `metadata_*` columns
-- `header_*` columns
-- all BLM samples for the cycle
-- the BLM sample times inside the cycle
-- the BCT samples for the same cycle
-- the cycle name
-- the MD user
-- the cycle timestamp
-- the SPS selector / MD user
-- the configured loss-map window
-- the BCT samples for the same cycle
-
-The JSON mirror uses a more inspectable structure:
-
-- `metadata`
-- `header`
-- `data.blm`
-- `data.bct`
-
-The post-processing output is written next to each parquet file:
-
-```text
-../sps-measurements/lossmaps/<study_name>/id1_lossmap.pdf
-```
-
-Each PDF contains:
-
-- one integrated loss map built by summing losses over the selected cycle window
-- logarithmic y-scale
-- y = loss in that BLM divided by total loss
-- x = position along the ring
-- `TCSM` and `TIDP` monitors in black
-- all other monitors in red
-
-The live plotting script now shows four separate figures:
-
-- the latest total-loss trace in the selected cycle window
-- the most recent integrated loss map
-- the second most recent integrated loss map
-- the third most recent integrated loss map
-
-By default the live loss maps do not draw BLM names directly on the figure. The `_SHOW_BLM_LABELS` switch in the plotting scripts can re-enable them if needed.
-
-For quick checks from IPython or the CCC, use:
-
-```bash
-python3 inspect_lossmap_file.py ../sps-measurements/lossmaps/<study_name>/id1.parquet
-python3 inspect_lossmap_file.py ../sps-measurements/lossmaps/<study_name>/id1.json --plot --window 1015 3200
-```
+Before using it on site, fill `_BLM_ACQUISITIONS` in [loss_map_monitor.py](/Users/lisepauwels/phd/code/sps-ccc-scripts/loss_map_monitor.py) with the actual available `BLRSPS_<pos>:ExpertAcquisition` prefixes.
