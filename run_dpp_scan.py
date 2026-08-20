@@ -94,7 +94,7 @@ def apply_dp_offset(target_value):
 
 def print_log(*args, **kwargs):
     print(*args, **kwargs)
-    with open("run.log", "a") as fid:
+    with open("run_dpp_scan.log", "a") as fid:
         print(*args, file=fid, **kwargs)
 
 def acquire_snapshot(name, bbq_data, bct_data, header):
